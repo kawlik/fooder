@@ -85,7 +85,10 @@ const SavedSelects = () => {
 
                                 </blockquote>
 
-                                <figcaption className="blockquote-footer">
+                                <figcaption className="blockquote-footer" style={{
+                                    color: `${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`,
+                                    textShadow: `1px 1px 5px ${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`
+                                }}>
 
                                     <cite title="food type">{ result.type }</cite>
 
