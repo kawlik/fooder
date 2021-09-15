@@ -70,15 +70,31 @@ const SavedSelects = () => {
 
                         <div key={ result._id } className="my-2 p-1 row rounded" style={{
                             border: `1px solid ${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`,
-                            boxShadow: `0 0 15px -5px ${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`,
+                            boxShadow: `0 0 15px -5px ${ types.filter( el => el.name ===     result.type )[0]?.color || 'whitesmoke' }`,
                         }}>
 
-                            <span className="col-2 lead p-2">{ index + 1 }.</span>
+                            <figure>
 
-                            <span className="col-10 lead p-2"><em>{ result.name }</em></span>
+                                <blockquote className="blockquote">
+
+                                    <span style={{
+                                        fontSize: '28px',
+                                        fontWeight: '300',
+                                        lineHeight: '130%',
+                                    }}>{ `${ index }. ${ result.name }` }</span>
+
+                                </blockquote>
+
+                                <figcaption className="blockquote-footer">
+
+                                    <cite title="food type">{ result.type }</cite>
+
+                                </figcaption>
+
+                            </figure>
 
                             <img src={ config.API.image + result.img } alt={ result.name} className="rounded mx-auto m-1" style={{
-                                maxWidth: 192,
+                                maxWidth: 128,
                             }} />
 
                         </div>

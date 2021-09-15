@@ -16,6 +16,7 @@ const StoreProvider = ({ children }) => {
 
     const [ user, setUser ] = useState( null );
     const [ types, setTypes ] = useState( [] );
+    const [ foods, setFoods ] = useState( [] );
 
     // reads and sets saved user
     const readSavedUser = async () => {
@@ -51,6 +52,8 @@ const StoreProvider = ({ children }) => {
         user, setUser,  //  user propeties
 
         types, setTypes,    //  food types propeties
+
+        foods, setFoods,    //  available foods
     };
 
 

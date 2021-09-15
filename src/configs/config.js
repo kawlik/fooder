@@ -12,6 +12,8 @@ const config = {
 
         types: 'http://localhost:8080/type/',
 
+        foods: 'http://localhost:8080/food/',
+
         authFacebook: 'http://localhost:8080/auth/facebook/',
 
         userAuth: 'http://localhost:8080/user/auth/',
