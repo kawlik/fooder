@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+
+// icons
+import { BiHappyAlt, BiHappyHeartEyes } from 'react-icons/bi';
+import { FaRegSadCry, FaRegSadTear } from 'react-icons/fa';
 
 
 /*  Module schema
 /*   *   *   *   *   *   *   *   *   *   */
 
-const MakeRates = ({ foods, types, setSelect }) => {
+const MakeRates = ({ foods, types, sendSelect }) => {
 
     const [ onList, setOnList ] = useState( [] );
-    const [ onWait, setOnWait ] = useState( [] );
 
     const addToList = ( e, elem, score ) => {
 
         elem.score = score - Math.random();
 
         e.target.closest( '.swipe' ).classList.add( elem.score > 5 ? 'right' : 'left' );
-
-        setTimeout(() => {
             
-            setOnList( prev => [...new Set([...prev, elem ])] );
-            setOnWait( prev => prev.filter( el => el._id !== elem._id ));
-
-        }, 500 );
+        setOnList( prev => [...prev, elem ] );
     };
 
-    const render = onWait.map( elem =>
+    const render = foods.map( elem =>
 
-        <div key={ elem._id } className={ `border rounded swipe p-1` } onClick={ ( e ) => addToList( e, elem, 3 - Math.random() ) }>
+        <div key={ elem._id } className="rounded swipe p-1" >
 
             <div className="col-12 mx-auto p-2 rounded" style={{
                 border: `3px solid ${ types.filter( el => el.name === elem.type )[0]?.color || 'whitesmoke' }`,
+                flexGrow: '1',
             }}>
 
                 <blockquote className="blockquote">
@@ -53,32 +51,33 @@ const MakeRates = ({ foods, types, setSelect }) => {
 
             </div>
 
-            <div className="col-12 row mx-auto my-2 p-2" >
+            <div className="col-12 row mx-auto my-1 p-1" >
                     
-                    <button className="col-2 mx-auto my-1 btn-rate" onClick={ ( e ) => addToList( e, elem, 2 ) }>0</button>
+                    <button className="col-2 mx-auto btn-rate" onClick={ ( e ) => addToList( e, elem, 2 ) } style={{ backgroundColor: '#dc3545' }}><FaRegSadCry /></button>
                     
-                    <button className="col-2 mx-auto my-1 btn-rate" onClick={ ( e ) => addToList( e, elem, 4 ) }>1</button>
+                    <button className="col-2 mx-auto btn-rate" onClick={ ( e ) => addToList( e, elem, 4 ) } style={{ backgroundColor: '#ffc107' }}><FaRegSadTear /></button>
 
-                    <button className="col-2 mx-auto my-1 btn-rate" onClick={ ( e ) => addToList( e, elem, 6 ) }>2</button>
+                    <button className="col-2 mx-auto btn-rate" onClick={ ( e ) => addToList( e, elem, 6 ) } style={{ backgroundColor: '#20c997' }}><BiHappyAlt /></button>
 
-                    <button className="col-2 mx-auto my-1 btn-rate" onClick={ ( e ) => addToList( e, elem, 8 ) }>3</button>
+                    <button className="col-2 mx-auto btn-rate" onClick={ ( e ) => addToList( e, elem, 8 ) } style={{ backgroundColor: '#198754' }}><BiHappyHeartEyes /></button>
 
             </div>
 
         </div>
     );
 
-    if( onWait.length === 0 && onList.length == foods.length ) {
-
-    }
-
     /*   *   *   *   *   *   *   *   */
 
     useEffect(() => {
 
-        setOnWait( prev => [...foods]);
+        if( onList.length === foods.length ) {
+
+            sendSelect( onList );
+    
+            setOnList( prev => [] );
+        }
         
-    }, []);    // eslint-disable-line
+    }, [ onList ]);    // eslint-disable-line
 
 
     /*   *   *   *   *   *   *   *   */

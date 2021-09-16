@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import axios from 'axios';
 
 // global context & config
 import { StoreContext } from '../configs/store';
@@ -15,15 +16,24 @@ import MakeRates from './makeRates';
 const MakeSelect = () => {
 
     const { user, foods, types } = useContext( StoreContext );
-
-    const [ select, setSelect ] = useState( null );
     const [ friend, setFriend ] = useState( null );
+
+    // send select to db
+    const sendSelect = async ( set ) => {
+
+        axios.post( config.API.makeSelect ,{
+            participants: [ user._id, friend ],
+            realizedBy: [ user._id ],
+            sets: [ set ],
+        })
+        .finally(() => setFriend( prev => null ));
+    };
 
     // render view
     let render = friend
-    ? <MakeRates foods={ foods } types={ types } setSelect={ setSelect } />
+    ? <MakeRates foods={ foods } types={ types } sendSelect={ sendSelect } />
     : <SelectFriend userFriends={ user.friends } setFriend={ setFriend } url={ config.API.userID } />;
-
+    
 
     /*   *   *   *   *   *   *   *   */
 

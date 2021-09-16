@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// global context & config
-import config from '../configs/config';
-
 
 /*  Module schema
 /*   *   *   *   *   *   *   *   *   *   */
@@ -32,7 +29,7 @@ const SelectFriend = ({ userFriends, setFriend, url }) => {
 
         <div key={ friend._id } className="col-12 p-1 m-1 border rounded" onClick={ () => { setFriend( friend._id ) }}>
 
-            <img src={ 'https://picsum.photos/200' || config.API.image + friend._id } alt={ friend.body.name } className="rounded mx-auto mx-2 my-1 float-left" style={{ maxWidth: 44, }} />
+            <img src={ friend.body.picture.data.url } alt={ friend.body.name } className="rounded mx-auto mx-2 my-1 float-left" style={{ maxWidth: 44, }} />
 
             <span className="leed mx-2">{ friend.body.name }</span>
 
@@ -53,6 +50,8 @@ const SelectFriend = ({ userFriends, setFriend, url }) => {
 
     return(
     <>
+
+        <h2 className="lead">Zaproś znajomego do wyboru</h2>
 
         { render }
 

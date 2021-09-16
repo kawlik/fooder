@@ -40,7 +40,17 @@ const SavedSelects = () => {
 
                         console.error( err );
 
-                        select.participants[ j ] = 'user';
+                        select.participants[ j ] = {
+                            id: '0',
+                            body: {
+                                name: 'user',
+                                picture: {
+                                    data: {
+                                        url: ''
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -58,10 +68,13 @@ const SavedSelects = () => {
             {
                 elem.participants.map( participant =>
                     <div key={ participant._id }>
-                        <img src={ 'https://picsum.photos/200' || config.API.image + participant.body.img } alt={ participant.body.name } className="rounded mx-auto mx-2 my-1" style={{
+
+                        <img src={ participant.body.picture.data.url } alt={ participant.body.name } className="rounded mx-auto mx-2 my-1" style={{
                                 maxWidth: 32,
                             }} />
+                            
                         <span className="small mx-2">{ participant.body.name }</span>
+
                     </div>
                 )
             }
@@ -75,7 +88,7 @@ const SavedSelects = () => {
 
                         <div key={ result._id } className="my-2 p-1 row rounded" style={{
                             border: `1px solid ${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`,
-                            boxShadow: `0 0 15px -5px ${ types.filter( el => el.name ===     result.type )[0]?.color || 'whitesmoke' }`,
+                            boxShadow: `0 0 15px -5px ${ types.filter( el => el.name === result.type )[0]?.color || 'whitesmoke' }`,
                         }}>
 
                             <figure>
@@ -86,7 +99,7 @@ const SavedSelects = () => {
                                         fontSize: '28px',
                                         fontWeight: '300',
                                         lineHeight: '130%',
-                                    }}>{ `${ index }. ${ result.name }` }</span>
+                                    }}>{ `${ index + 1 }. ${ result.name }` }</span>
 
                                 </blockquote>
 
@@ -126,6 +139,8 @@ const SavedSelects = () => {
 
     return(
     <>
+
+        <h2 className="lead">Zapisane rezultaty</h2>
         
         { render }
 

@@ -14,6 +14,8 @@ const config = {
 
         foods: 'http://localhost:8080/food/',
 
+        makeSelect: 'http://localhost:8080/select/',
+
         authFacebook: 'http://localhost:8080/auth/facebook/',
 
         userAuth: 'http://localhost:8080/user/auth/',
@@ -23,6 +25,10 @@ const config = {
         newestSelect: 'http://localhost:8080/select/newest/',
 
         waitingSelect: 'http://localhost:8080/select/waiting/',
+
+        putSelect: 'http://localhost:8080/select/id/',
+
+        deleteSelect: 'http://localhost:8080/select/',
     },
 
     // views values
@@ -31,6 +37,8 @@ const config = {
         saved: 'saved',
         
         select: 'select',
+
+        waiting: 'waiting',
         
         profile: 'profile',
     },

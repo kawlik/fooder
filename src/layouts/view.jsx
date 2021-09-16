@@ -7,6 +7,7 @@ import config from '../configs/config';
 import ViewSelector from '../components/viewSelector';
 import SavedSelects from '../components/savedSelects';
 import MakeSelect from '../components/makeSelect';
+import FillSelect from '../components/fillSelect';
 
 
 /*  Module schema
@@ -14,7 +15,7 @@ import MakeSelect from '../components/makeSelect';
 
 const View = () => {
 
-    const [ view, setView ] = useState( config.view.select );
+    const [ view, setView ] = useState( config.view.profile );
 
 
     let render;
@@ -24,6 +25,8 @@ const View = () => {
         default: render = <MakeSelect />; break;
         
         case config.view.saved: render = <SavedSelects />; break;
+        
+        case config.view.waiting: render = <FillSelect />; break;
 
         case config.view.profile: render = <h2>PROFILE</h2>; break;
     };

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // fonts module
-import { FaUser, FaCalendarCheck, FaCalendarPlus } from 'react-icons/fa';
+import { FaUser, FaCalendarAlt, FaCalendarCheck, FaCalendarPlus } from 'react-icons/fa';
 
 
 /*  Module schema
@@ -26,6 +26,8 @@ const ViewSelector = ({ curr, views, selectView }) => {
         <button onClick={ setView } value={ views.saved } type="button" className={ `col-2 selectItem mx-auto ${ curr === views.saved && 'active'}` }><FaCalendarCheck /></button>
 
         <button onClick={ setView } value={ views.select } type="button" className={ `col-2 selectItem mx-auto ${ curr === views.select && 'active'}` }><FaCalendarPlus /></button>
+
+        <button onClick={ setView } value={ views.waiting } type="button" className={ `col-2 selectItem mx-auto ${ curr === views.waiting && 'active'}` }><FaCalendarAlt /></button>
 
         <button onClick={ setView } value={ views.profile } type="button" className={ `col-2 selectItem mx-auto ${ curr === views.profile && 'active'}` }><FaUser /></button>
 
