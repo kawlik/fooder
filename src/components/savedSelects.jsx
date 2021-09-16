@@ -32,9 +32,9 @@ const SavedSelects = () => {
                     try {
 
                         const res = await axios.get( config.API.userID + participant );
-                        const name = res.data.body.name;
+                        const participantBody = res.data;
     
-                        select.participants[ j ] = name;
+                        select.participants[ j ] = participantBody;
 
                     } catch( err ) {
 
@@ -56,8 +56,13 @@ const SavedSelects = () => {
             <p><em>{ elem.date.split( 'T' )[0] }</em></p>
 
             {
-                elem.participants.map( participant => 
-                    <span className="small" key={ participant }>{ participant }</span>
+                elem.participants.map( participant =>
+                    <div key={ participant._id }>
+                        <img src={ 'https://picsum.photos/200' || config.API.image + participant.body.img } alt={ participant.body.name } className="rounded mx-auto mx-2 my-1" style={{
+                                maxWidth: 32,
+                            }} />
+                        <span className="small mx-2">{ participant.body.name }</span>
+                    </div>
                 )
             }
 
@@ -96,7 +101,7 @@ const SavedSelects = () => {
 
                             </figure>
 
-                            <img src={ config.API.image + result.img } alt={ result.name} className="rounded mx-auto m-1" style={{
+                            <img src={ 'https://picsum.photos/200' || config.API.image + result.img } alt={ result.name } className="rounded mx-auto m-1" style={{
                                 maxWidth: 128,
                             }} />
 
@@ -110,15 +115,12 @@ const SavedSelects = () => {
     );
 
     /*   *   *   *   *   *   *   *   */
-
+                
     useEffect(() => {
-        
-        if( !selects.length ) {
 
-            fetchSelects();
-        }
+        fetchSelects();
 
-    }, [ selects ]);
+    }, []);    // eslint-disable-line
 
     /*   *   *   *   *   *   *   *   */
 

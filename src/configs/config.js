@@ -21,6 +21,8 @@ const config = {
         userID: 'http://localhost:8080/user/id/',
 
         newestSelect: 'http://localhost:8080/select/newest/',
+
+        waitingSelect: 'http://localhost:8080/select/waiting/',
     },
 
     // views values

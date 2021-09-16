@@ -23,7 +23,7 @@ const StoreProvider = ({ children }) => {
 
         const readUser = JSON.parse( localStorage.getItem( 'user' ));
 
-        if( readUser.hasOwnProperty( 'auth' )) {
+        if( readUser?.hasOwnProperty( 'auth' )) {
             
             const restoredUser = await axios.get( config.API.userAuth + readUser.auth );
 
@@ -43,6 +43,14 @@ const StoreProvider = ({ children }) => {
         const fetchedTypes = await axios.get( config.API.types );
 
         setTypes( prev => fetchedTypes.data );
+    };
+
+    // reads available foods
+    const fetchFoods = async () => {
+
+        const fetchedTypes = await axios.get( config.API.foods );
+
+        setFoods( prev => fetchedTypes.data );
     };
 
     /*   *   *   *   *   *   *   *   */
@@ -68,12 +76,14 @@ const StoreProvider = ({ children }) => {
 
         if( user ) {
 
+            saveUser();
+
             fetchTypes();
 
-            saveUser();
+            fetchFoods();
         }
 
-    }, [ user ]);
+    }, [ user ]);   // eslint-disable-line
 
 
     /*   *   *   *   *   *   *   *   */

@@ -6,6 +6,7 @@ import config from '../configs/config';
 // components
 import ViewSelector from '../components/viewSelector';
 import SavedSelects from '../components/savedSelects';
+import MakeSelect from '../components/makeSelect';
 
 
 /*  Module schema
@@ -20,13 +21,11 @@ const View = () => {
     
     switch( view ) {
 
+        default: render = <MakeSelect />; break;
+        
         case config.view.saved: render = <SavedSelects />; break;
 
-        case config.view.select: render = <h2>SELECT</h2>; break;
-
         case config.view.profile: render = <h2>PROFILE</h2>; break;
-
-        default: render = <SavedSelects />; break;
     };
 
 
