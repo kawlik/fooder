@@ -20,7 +20,11 @@ const config = {
 
         userAuth: 'http://localhost:8080/user/auth/',
 
+        userName: 'http://localhost:8080/user/name/',
+
         userID: 'http://localhost:8080/user/id/',
+
+        userAdd: 'http://localhost:8080/user/friend/',
 
         newestSelect: 'http://localhost:8080/select/newest/',
 

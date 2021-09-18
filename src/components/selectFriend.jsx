@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const SelectFriend = ({ userFriends, setFriend, url }) => {
     
-    const [ friends, setFriends ] = useState( [] );
+    const [ friends, setFriends ] = useState( null );
 
     const fetchUsers = async () => {
 
@@ -24,7 +24,7 @@ const SelectFriend = ({ userFriends, setFriend, url }) => {
     };
 
     // render view
-    const render = friends.map( friend => 
+    const render = friends?.map( friend => 
 
         <div key={ friend._id } className="col-12 p-1 m-1 border rounded" onClick={ () => { setFriend( friend._id ) }}>
 
