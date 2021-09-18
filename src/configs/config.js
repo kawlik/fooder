@@ -6,33 +6,33 @@ const config = {
     // API endpoinds
     API: {
 
-        host: 'http://localhost:8080/',
+        host: 'https://fooder-back.herokuapp.com/',
 
-        image: 'http://localhost:8080/img/',
+        image: 'https://fooder-back.herokuapp.com/img/',
 
-        types: 'http://localhost:8080/type/',
+        types: 'https://fooder-back.herokuapp.com/type/',
 
-        foods: 'http://localhost:8080/food/',
+        foods: 'https://fooder-back.herokuapp.com/food/',
 
-        makeSelect: 'http://localhost:8080/select/',
+        makeSelect: 'https://fooder-back.herokuapp.com/select/',
 
-        authFacebook: 'http://localhost:8080/auth/facebook/',
+        authFacebook: 'https://fooder-back.herokuapp.com/auth/facebook/',
 
-        userAuth: 'http://localhost:8080/user/auth/',
+        userAuth: 'https://fooder-back.herokuapp.com/user/auth/',
 
-        userName: 'http://localhost:8080/user/name/',
+        userName: 'https://fooder-back.herokuapp.com/user/name/',
 
-        userID: 'http://localhost:8080/user/id/',
+        userID: 'https://fooder-back.herokuapp.com/user/id/',
 
-        userAdd: 'http://localhost:8080/user/friend/',
+        userAdd: 'https://fooder-back.herokuapp.com/user/friend/',
 
-        newestSelect: 'http://localhost:8080/select/newest/',
+        newestSelect: 'https://fooder-back.herokuapp.com/select/newest/',
 
-        waitingSelect: 'http://localhost:8080/select/waiting/',
+        waitingSelect: 'https://fooder-back.herokuapp.com/select/waiting/',
 
-        putSelect: 'http://localhost:8080/select/id/',
+        putSelect: 'https://fooder-back.herokuapp.com/select/id/',
 
-        deleteSelect: 'http://localhost:8080/select/',
+        deleteSelect: 'https://fooder-back.herokuapp.com/select/',
     },
 
     // views values
