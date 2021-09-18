@@ -114,7 +114,7 @@ const SavedSelects = () => {
 
                             </figure>
 
-                            <img src={ 'https://picsum.photos/200' || config.API.image + result.img } alt={ result.name } className="rounded mx-auto m-1" style={{
+                            <img src={ config.API.image + result.img } alt={ result.name } className="rounded mx-auto m-1" style={{
                                 maxWidth: 128,
                             }} />
 

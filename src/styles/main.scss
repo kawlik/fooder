@@ -111,6 +111,24 @@ body {
 
             position: relative;
             text-align: center;
+
+            transition: all ease-in-out 0.1s;
+
+            &.selected {
+
+                transform: scale( 1.75 );
+            }
+        }
+
+        .unrated {
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+
+            justify-content: flex-end;
+            align-content: center;
+            align-items: center;
         }
     }
 }

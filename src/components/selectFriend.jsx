@@ -26,7 +26,6 @@ const SelectFriend = ({ userFriends, setFriend, url }) => {
     // render view
     const render = friends.map( friend => 
 
-
         <div key={ friend._id } className="col-12 p-1 m-1 border rounded" onClick={ () => { setFriend( friend._id ) }}>
 
             <img src={ friend.body.picture.data.url } alt={ friend.body.name } className="rounded mx-auto mx-2 my-1 float-left" style={{ maxWidth: 44, }} />

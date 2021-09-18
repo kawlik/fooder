@@ -8,6 +8,7 @@ import ViewSelector from '../components/viewSelector';
 import SavedSelects from '../components/savedSelects';
 import MakeSelect from '../components/makeSelect';
 import FillSelect from '../components/fillSelect';
+import ShowProfile from '../components/showProfile';
 
 
 /*  Module schema
@@ -28,7 +29,7 @@ const View = () => {
         
         case config.view.waiting: render = <FillSelect />; break;
 
-        case config.view.profile: render = <h2>PROFILE</h2>; break;
+        case config.view.profile: render = <ShowProfile />; break;
     };
 
 

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
+// global config
+import config from '../configs/config';
+
 // icons
 import { BiHappyAlt, BiHappyHeartEyes } from 'react-icons/bi';
 import { FaRegSadCry, FaRegSadTear } from 'react-icons/fa';
@@ -16,6 +19,8 @@ const MakeRates = ({ foods, types, sendSelect }) => {
 
         elem.score = score - Math.random();
 
+        e.target.closest( 'button' ).classList.add( 'selected' );
+
         e.target.closest( '.swipe' ).classList.add( elem.score > 5 ? 'right' : 'left' );
             
         setOnList( prev => [...prev, elem ] );
@@ -25,19 +30,23 @@ const MakeRates = ({ foods, types, sendSelect }) => {
 
         <div key={ elem._id } className="rounded swipe p-1" >
 
-            <div className="col-12 mx-auto p-2 rounded" style={{
+            <div className="col-12 mx-auto p-2 rounded unrated" style={{
                 border: `3px solid ${ types.filter( el => el.name === elem.type )[0]?.color || 'whitesmoke' }`,
                 flexGrow: '1',
             }}>
 
-                <blockquote className="blockquote">
+                <img src={ config.API.image + elem.img } alt={ elem.name } className="rounded img-fluid mx-auto my-auto" />
 
-                    <span style={{
-                        fontSize: '28px',
-                        fontWeight: '300',
-                        lineHeight: '110%',
-                        textAlign: 'center',
-                    }}>{ elem.name }</span>
+                <div>
+
+                    <blockquote className="blockquote">
+
+                        <span style={{
+                            fontSize: '28px',
+                            fontWeight: '300',
+                            lineHeight: '110%',
+                            textAlign: 'center',
+                        }}>{ elem.name }</span>
 
                     </blockquote>
 
@@ -45,9 +54,11 @@ const MakeRates = ({ foods, types, sendSelect }) => {
                         color: '#343434'
                     }}>
 
-                    <cite title="food type">{ elem.type }</cite>
+                        <cite title="food type">{ elem.type }</cite>
 
                     </figcaption>
+
+                </div>
 
             </div>
 
