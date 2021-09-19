@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/fooder/static/css/main.a05b5672.chunk.css",
-    "main.js": "/fooder/static/js/main.0b1e9f9a.chunk.js",
-    "main.js.map": "/fooder/static/js/main.0b1e9f9a.chunk.js.map",
+    "main.css": "/fooder/static/css/main.bb9c5350.chunk.css",
+    "main.js": "/fooder/static/js/main.9a682715.chunk.js",
+    "main.js.map": "/fooder/static/js/main.9a682715.chunk.js.map",
     "runtime-main.js": "/fooder/static/js/runtime-main.8c9d0582.js",
     "runtime-main.js.map": "/fooder/static/js/runtime-main.8c9d0582.js.map",
     "static/css/2.f2512455.chunk.css": "/fooder/static/css/2.f2512455.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.7228c944.chunk.js.map": "/fooder/static/js/2.7228c944.chunk.js.map",
     "index.html": "/fooder/index.html",
     "static/css/2.f2512455.chunk.css.map": "/fooder/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.a05b5672.chunk.css.map": "/fooder/static/css/main.a05b5672.chunk.css.map",
+    "static/css/main.bb9c5350.chunk.css.map": "/fooder/static/css/main.bb9c5350.chunk.css.map",
     "static/js/2.7228c944.chunk.js.LICENSE.txt": "/fooder/static/js/2.7228c944.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8c9d0582.js",
     "static/css/2.f2512455.chunk.css",
     "static/js/2.7228c944.chunk.js",
-    "static/css/main.a05b5672.chunk.css",
-    "static/js/main.0b1e9f9a.chunk.js"
+    "static/css/main.bb9c5350.chunk.css",
+    "static/js/main.9a682715.chunk.js"
   ]
 }
