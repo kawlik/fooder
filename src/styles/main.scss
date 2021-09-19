@@ -78,6 +78,17 @@ body {
 
     position: relative;
 
+    animation-name: easeIn;
+    animation-duration: 0.4s;
+    animation-delay: 0;
+
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-fill-mode: both;
+
+    &.left { animation-name: swipeLeft; }
+    &.right { animation-name: swipeRight; }
+
     .swipe {
 
         position: absolute;
@@ -167,5 +178,66 @@ body {
         transition: all ease-in-out 0.3s;
 
         &.active { color: gold; }
+    }
+}
+
+/*
+/*   *   *   *   *   *   *   *   *   *   */
+
+@keyframes easeIn {
+
+    from {
+        
+        opacity: 0;
+
+    } to {
+        
+        opacity: 1;
+    }
+}
+
+@keyframes swipeLeft {
+    
+    0% {
+
+        opacity: 0;
+        transform: translateX( 0 );
+
+    }
+
+    33% {
+
+        opacity: 0;
+        transform: translateX( -100% );
+    }
+    
+    100% {
+
+        opacity: 1;
+        transform: translateX( 0 );
+
+    }
+}
+
+@keyframes swipeRight {
+    
+    0% {
+
+        opacity: 0;
+        transform: translateX( 0 );
+
+    }
+
+    33% {
+
+        opacity: 0;
+        transform: translateX( 100% );
+    }
+    
+    100% {
+
+        opacity: 1;
+        transform: translateX( 0 );
+
     }
 }

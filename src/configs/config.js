@@ -46,6 +46,8 @@ const config = {
         
         profile: 'profile',
     },
+
+    views: [ 'saved', 'select', 'waiting', 'profile' ],
 };
 
 /*  Module export
