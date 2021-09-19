@@ -79,7 +79,7 @@ body {
     position: relative;
 
     animation-name: easeIn;
-    animation-duration: 0.4s;
+    animation-duration: 0.3s;
     animation-delay: 0;
 
     animation-timing-function: linear;
@@ -97,7 +97,7 @@ body {
         
         background-color: white;
         transform: translateX( -50% ) translateY( -50% );
-        transition: all ease-in 0.4s;
+        transition: all ease-in 0.3s;
 
         display: flex;
         flex-wrap: nowrap;

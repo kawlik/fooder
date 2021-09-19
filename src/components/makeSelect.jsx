@@ -26,6 +26,7 @@ const MakeSelect = () => {
             realizedBy: [ user._id ],
             sets: [ set ],
         })
+        .then(() => setFoods( prev  => prev.sort(( p, n ) => 0.5 - Math.random())))
         .finally(() => setFriend( prev => null ));
     };
 

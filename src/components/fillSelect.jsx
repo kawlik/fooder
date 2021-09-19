@@ -15,7 +15,7 @@ import MakeRates from './makeRates';
 
 const FillSelect = () => {
 
-    const { user, foods, types } = useContext( StoreContext );   
+    const { user, foods, types, setFoods } = useContext( StoreContext );   
     const [ waiting, setWaiting ] = useState( null );
 
     const sendSelect = async ( set ) => {
@@ -24,6 +24,7 @@ const FillSelect = () => {
             participant: user._id,
             set: set,
         })
+        .then(() => setFoods( prev  => prev.sort(( p, n ) => 0.5 - Math.random())))
         .finally(() => setWaiting( prev => null ));
     };
 
@@ -34,7 +35,9 @@ const FillSelect = () => {
     /*   *   *   *   *   *   *   *   */
 
     useEffect(() => {
-        
+
+        setFoods( prev  => prev.sort(( p, n ) => 0.5 - Math.random()));
+
     }, []);    // eslint-disable-line
 
 
