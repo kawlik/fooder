@@ -50,7 +50,7 @@ const StoreProvider = ({ children }) => {
 
         const fetchedTypes = await axios.get( config.API.foods );
 
-        setFoods( prev => fetchedTypes.data );
+        setFoods( prev => fetchedTypes.data.sort(( p, n ) => 0.5 - Math.random()));
     };
 
     /*   *   *   *   *   *   *   *   */

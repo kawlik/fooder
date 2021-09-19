@@ -60,7 +60,7 @@ const View = () => {
         const delta_x = touch.x - next_x;
         const delta_y = touch.y - next_y;
         
-        if( Math.abs( delta_x ) > Math.abs( delta_y ) && Math.abs( delta_x ) > window.innerWidth / 2 ) {
+        if( Math.abs( delta_x ) > Math.abs( delta_y ) && Math.abs( delta_x ) > window.innerWidth / 3 ) {
 
             const min = 0;
             const max = config.views.length - 1;

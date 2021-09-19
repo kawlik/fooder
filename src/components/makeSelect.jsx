@@ -15,7 +15,7 @@ import MakeRates from './makeRates';
 
 const MakeSelect = () => {
 
-    const { user, foods, types } = useContext( StoreContext );
+    const { user, foods, types, setFoods } = useContext( StoreContext );
     const [ friend, setFriend ] = useState( null );
 
     // send select to db
@@ -38,6 +38,8 @@ const MakeSelect = () => {
     /*   *   *   *   *   *   *   *   */
 
     useEffect(() => {
+
+        setFoods( prev  => prev.sort(( p, n ) => 0.5 - Math.random()));
         
     }, []);    // eslint-disable-line
 
